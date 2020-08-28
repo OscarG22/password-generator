@@ -13,27 +13,26 @@ function writePassword() {
   passwordText.value = password;
 }
 
-const lowercase = "abcdefghijklmnopqrstuvwxyz"
-
-const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
-const numeric = "0123456789"
-
-const special = "!@#$%^&*()"
-
 /**
  * generate a password based on certain criteria
  */
 function generatePassword(){
 
-  let userLength = prompt ("Choose Amount of Characters Between 8 and 128");
-  let userLowercase = confirm ("Do You Want Lowercase Letters?");
-  let userUppercase = confirm ("Do You Want Uppercase Letters?");
-  let numeric = confirm 
+  let upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let lowerChar = "abcdefghijklmnopqrstuvwxyz";
+  let numChar = "0123456789";
+  let specChar = "!@#$%^&*()-_=+";
+
+  let upperCharArr = upperChar.split("");
+  let lowerCharArr = lowerChar.split("");
+  let numCharArr = numChar.split("");
+  let specCharArr = specChar.split("");
   
   // Password is currently blank! We need to make a better one
   let password = "";
+  let CharArr = [];
 
+  
 
 
   return password;
