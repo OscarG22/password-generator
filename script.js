@@ -16,7 +16,7 @@ function writePassword() {
 /**
  * generate a password based on certain criteria
  */
-function generatePassword(){
+function generatePassword() {
 
   let upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let lowerChar = "abcdefghijklmnopqrstuvwxyz";
@@ -27,12 +27,46 @@ function generatePassword(){
   let lowerCharArr = lowerChar.split("");
   let numCharArr = numChar.split("");
   let specCharArr = specChar.split("");
-  
+
   // Password is currently blank! We need to make a better one
   let password = "";
   let CharArr = [];
 
-  
+  let pwLength = prompt("Choose A Password Length Between 8 and 128 Characters");
+  let upperCase = confirm("Do You Want Your Password To Have Uppercase Letters?");
+  let lowerCase = confirm("Do You Want Your Password To Have Lowercase Letters?");
+  let numeric = confirm("Do You Want Your Password To Have Numbers?");
+  let special = confirm("Do You Want Your Password To Have Special Characters?");
+
+  if (pwLength < 8 || pwLength > 128) {
+    alert("The length of the password has to be between 8 and 128 characters");
+  };
+
+  if (upperCase === true) {
+    charArr = charArr.concat(upperCharArr)
+  }
+
+  if (lowerCase === true) {
+    charArr = charArr.concat(lowerCharArr)
+  }
+
+  if (numeric === true) {
+    charArr = charArr.concat(numCharArr)
+  }
+
+  if (special === true) {
+    charArr = charArr.concat(specCharArr)
+  }
+
+  if (charArr.length === 0) {
+    alert("One Or More Of The Character Types Must Be Selected");
+  }
+  else {
+    for (let i = 0; i < pwLength; i++) {
+      let pwRandom = Math.floor(Math.randon() * charArr.length);
+      password = password + charArr[pwRandom];
+    }
+  }
 
 
   return password;
