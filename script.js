@@ -30,7 +30,7 @@ function generatePassword() {
 
   // Password is currently blank! We need to make a better one
   let password = "";
-  let CharArr = [];
+  let charArr = [];
 
   let pwLength = prompt("Choose A Password Length Between 8 and 128 Characters");
   let upperCase = confirm("Do You Want Your Password To Have Uppercase Letters?");
@@ -63,12 +63,12 @@ function generatePassword() {
   }
   else {
     for (let i = 0; i < pwLength; i++) {
-      let pwRandom = Math.floor(Math.randon() * charArr.length);
+      let pwRandom = Math.floor(Math.random() * charArr.length);
       password = password + charArr[pwRandom];
     }
   }
 
-
+console.log (password)
   return password;
 }
 
